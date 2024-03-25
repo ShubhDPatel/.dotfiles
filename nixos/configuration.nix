@@ -149,6 +149,7 @@
      slurp
      swayidle
      libxml2
+     libarchive
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
