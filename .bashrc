@@ -18,7 +18,7 @@ if [[ ! -v BASH_COMPLETION_VERSINFO ]]; then
   . "/nix/store/80w98qbaxwyrd0wisi5zd0yqjyrh4pbs-bash-completion-2.11/etc/profile.d/bash_completion.sh"
 fi
 
-export PATH="/etc/profiles/per-user/shubh/bin/cmake-3.29.0-linux-x86_64/bin:$PATH"
+export PATH="/etc/profiles/per-user/$USER/bin/cmake-3.29.0-linux-x86_64/bin:$PATH"
 
 eval "$(starship init bash)"
 
