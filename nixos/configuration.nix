@@ -142,7 +142,6 @@
      unzip
      fzf
      ripgrep
-     cmake
      gnumake
      nodejs_21
      shotman
