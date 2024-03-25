@@ -149,6 +149,7 @@
      swayidle
      libxml2
      libarchive
+     openssl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
