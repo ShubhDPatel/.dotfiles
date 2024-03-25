@@ -151,7 +151,6 @@
      libarchive
      openssl
      pkgconf
-     cmake
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
