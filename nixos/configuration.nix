@@ -148,6 +148,7 @@
      shotman
      slurp
      swayidle
+     libxml2
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
