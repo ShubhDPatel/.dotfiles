@@ -150,6 +150,7 @@
      libarchive
      openssl
      pkgconf
+     libxml2.dev
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
