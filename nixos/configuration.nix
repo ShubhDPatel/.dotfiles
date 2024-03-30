@@ -147,7 +147,6 @@
      shotman
      slurp
      swayidle
-     libxml2
      libarchive
      openssl
      pkgconf
