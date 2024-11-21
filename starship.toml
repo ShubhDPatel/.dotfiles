@@ -37,6 +37,9 @@ format = '\[[$symbol$context]($style)\]'
 [dotnet]
 format = '\[[$symbol($version)(🎯 $tfm)]($style)\]'
 
+[directory]
+truncate_to_repo = false
+
 [elixir]
 format = '\[[$symbol($version \(OTP $otp_version\))]($style)\]'
 
