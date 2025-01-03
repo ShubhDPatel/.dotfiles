@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ln -s ./
+ln -s ./.inputrc ~/.inputrc
