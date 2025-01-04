@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Function to create symlink for .inputrc
 create_inputrc_symlink() {
   local SOURCE="$HOME/.dotfiles/.inputrc"
   local DESTINATION="$HOME/.inputrc"
@@ -18,7 +17,6 @@ create_inputrc_symlink() {
   fi
 }
 
-# Function to create symlink for Neovim configuration
 create_neovim_symlink() {
   local SOURCE_NVIM="$HOME/.dotfiles/nvim"
   local DESTINATION_NVIM="$HOME/.config/nvim"
@@ -36,7 +34,6 @@ create_neovim_symlink() {
   fi
 }
 
-# Function to create symlink for starship.toml
 create_starship_symlink() {
   local SOURCE_STARSHIP="$HOME/.dotfiles/starship.toml"
   local DESTINATION_STARSHIP="$HOME/.config/starship.toml"
@@ -54,7 +51,6 @@ create_starship_symlink() {
   fi
 }
 
-# Execute functions
 create_inputrc_symlink
 create_neovim_symlink
 create_starship_symlink
