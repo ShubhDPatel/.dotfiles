@@ -6,7 +6,7 @@ BASHRC="$HOME/.bashrc"
 COMMANDS_TO_ADD=(
     'eval "$(starship init bash)"'
     'export BROWSER=wslview'
-    'export PATH="$PATH:/opt/nvim-linux64/bin'
+    'export PATH="$PATH:/opt/nvim-linux-x86_64/bin"'
     'export PATH="$HOME/.local/bin:$PATH"'
 )
 
