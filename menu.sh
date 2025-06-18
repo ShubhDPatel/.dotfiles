@@ -1,37 +1,35 @@
 #!/bin/bash
 
-# Set the prompt for the select menu
-PS3="Please choose an option: "
+echo "=== Quick Command Menu ==="
+echo "1) Update system (Debian/Ubuntu)"
+echo "2) Sync Git repo with remote (including pruning deleted branches)"
+echo "3) Exit"
 
-# Define the menu options
-options=("Option 1" "Option 2" "Option 3" "Exit")
+read -p "Choose an option (1-3): " choice
 
-# Loop to display the menu and handle user input
-select opt in "${options[@]}"
-do
-    case $opt in
-        "Option 1")
-            echo "You chose Option 1."
-            # Add commands for Option 1 here
-            break
-            ;;
-        "Option 2")
-            echo "You chose Option 2."
-            # Add commands for Option 2 here
-            break
-            ;;
-        "Option 3")
-            echo "You chose Option 3."
-            # Add commands for Option 3 here
-            break
-            ;;
-        "Exit")
-            echo "Exiting the menu. Goodbye!"
-            break # Exit the select loop
-            ;;
-        *)
-            echo "Invalid option. Please try again."
-            ;;
-    esac
-    echo # Add a blank line for better readability
-done
+case "$choice" in
+  1)
+    echo "Running: sudo apt update && sudo apt upgrade -y"
+    sudo apt update && sudo apt upgrade -y
+    ;;
+  2)
+    echo "Syncing with remote and pruning deleted branches..."
+
+    echo "Fetching all branches..."
+    git fetch --all --prune
+
+    echo "Pruning local branches deleted from remote..."
+    for branch in $(git branch -vv | awk '/: gone]/{print $1}'); do
+      echo "Deleting local branch: $branch"
+      git branch -D "$branch"
+    done
+
+    echo "Done syncing."
+    ;;
+  3)
+    echo "Goodbye!"
+    ;;
+  *)
+    echo "Invalid choice. Exiting."
+    ;;
+esac
