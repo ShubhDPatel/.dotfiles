@@ -17,6 +17,23 @@ create_inputrc_symlink() {
   fi
 }
 
+create_profile_symlink() {
+  local SOURCE="$HOME/.dotfiles/.profile"
+  local DESTINATION="$HOME/.profile"
+
+  if [ -e "$DESTINATION" ]; then
+    echo "Error: $DESTINATION already exists. Remove it first if you want to recreate the symlink."
+  else
+    ln -s "$SOURCE" "$DESTINATION"
+
+    if [ -L "$DESTINATION" ]; then
+      echo "Symbolic link created for .profile: $DESTINATION -> $SOURCE"
+    else
+      echo "Failed to create symbolic link for .profile."
+    fi
+  fi
+}
+
 create_neovim_symlink() {
   local SOURCE_NVIM="$HOME/.dotfiles/nvim"
   local DESTINATION_NVIM="$HOME/.config/nvim"
@@ -52,5 +69,6 @@ create_starship_symlink() {
 }
 
 create_inputrc_symlink
+create_profile_symlink
 create_neovim_symlink
 create_starship_symlink
